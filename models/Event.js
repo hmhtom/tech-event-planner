@@ -17,15 +17,16 @@ Event.init(
     },
     description: {
       type: DataTypes.TEXT,
+      allowNull: false,
     },
-    date_created: {
+    date: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
+   
     },
     location: {
       type: DataTypes.STRING,
-      allowNull: false,
+     
     },
     user_id: {
       type: DataTypes.INTEGER,

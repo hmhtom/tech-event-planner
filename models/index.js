@@ -4,9 +4,11 @@ const Comment = require('./Comment');
 const Category = require('./Category');
 const Participant = require('./Participant');
 
+User.hasMany(Event,{
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 
-
-
+});
 Category.hasMany(Event,{
     foreignKey: 'category_id',
     onDelete: 'CASCADE'
