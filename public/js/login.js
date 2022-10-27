@@ -14,8 +14,8 @@ const loginForm = async (event) => {
       });
   
       if (response.ok) {
-        // If login is successful -> profile page
-        document.location.replace('/profile');
+        // If login is successful -> stay on same page
+        document.location.reload('/');
       } else {
         alert(response.statusText);
       }
@@ -37,7 +37,7 @@ const loginForm = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/profile');
+        document.location.replace('/dashboard');
       } else {
         alert(response.statusText);
       }
