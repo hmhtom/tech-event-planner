@@ -8,24 +8,25 @@ const participantData = require('./participantData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
-  const users = await User.bulkCreate(userData, {
+  await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
   });
-  for (const event of eventData) {
-    await Event.create({
-      ...event,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
+  
+   await Event.bulkCreate(eventData, {
+        returning: true,
     });
-}
-    const category = await Category.bulkCreate(categoryData, {
+     
+     
+
+ await Category.bulkCreate(categoryData, {
   
     returning: true,
-  });
-  const participant = await Participant.bulkCreate(participantData, {
+     });
+await Participant.bulkCreate(participantData, {
   
     returning: true,
-  });
+     });
 
   process.exit(0);
 };
