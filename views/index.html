@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet"/>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="../public/css/style.css">
 </head>
-
 <body class="container">
   <div class="column is-justify-content-space-between">
     <header class="is-flex justify-space-between is-align-items-center">
@@ -49,7 +49,7 @@
                           <div>
                               <form id="search-form" class="field has-addons user-form">
                                   <input id="search-input" class="user-entry input" type="text" placeholder="Find an event">
-                                  <i class="fa-solid fa-magnifying-glass"></i>
+                                 
                                   <div class="dropdown is-primary">
                                     <div class="dropdown-trigger">
                                       <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
@@ -72,10 +72,14 @@
                                     </a>  
                                 </div>
                                 </div>
-                        
                                 </form>
-                                <div class="control">
-                                    <button id="search-btn" class="button is-primary">Search</button> 
+                                <p class="buttons">
+                                    <button id="search-btn" class="button is-primary">
+                                        <span class="icon">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </span>
+                                        <span>Search</span>   
+                                    </button> 
                             </section>   
                             </div>
                         </div>
@@ -88,4 +92,11 @@
             <a class="pagination-next">Next page</a>
           <script src="../public/js/homepage.js"></script>          
   </body>
-    
+  <footer class="footer footer-container">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Made</strong> by <a href="https://github.com/puentedg">Gabriella,</a> <a href="https://github.com/safazgolli">Safa</a> and 
+        <a href="https://github.com/hmhtom">Alex</a>
+      </p>
+    </div>
+  </footer>
