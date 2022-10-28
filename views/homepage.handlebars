@@ -10,11 +10,11 @@
       <a class="navbar-item">
         Home
       </a>
-       <a class="navbar-item">
+        <a class="navbar-item">
         About
       </a>
     </div>
-       <div class="navbar-end">
+        <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
           <a class="button is-primary">
@@ -28,6 +28,8 @@
     </div>
 </div>
 </nav>
+</header>
+<main>
 <section class="section">
             <div class="container">
               <div class="columns is-centered">
@@ -36,12 +38,38 @@
                     <form id="search-form" class="field has-addons user-form">
                         <input id="search-input" class="user-entry input" type="text" placeholder="Find an event">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <div class="control">
-                        <button id="search-btn" class="button is-primary">Search</button>
-                        </div>
-                    </form>
-                </div>
-            </section>
+                        <div class="dropdown is-primary">
+                          <div class="dropdown-trigger">
+                            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                              <span> Category</span>
+                              <span class="icon is-small">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                              </span>
+                          </button>
+                      </div>
+                      <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                        <div class="dropdown-content">
+                          <a class="dropdown-item is-primary">
+                            Career
+                          </a>
+                          <a href="#" class="dropdown-item is-primary">
+                            Build knowledge
+                          </a>
+                          <a href="#" class="dropdown-item is-primary">
+                            Share Interests
+                          </a>  
+                      </div>
+                      </div>
+                      </form>
+                      <div class="control">
+                          <button id="search-btn" class="button is-primary">Search</button> 
+                  </section>   
+                  </div>
+              </div>
+              </div>
+            </form>
+      </div>
+  </main>
 <!-- Loop over events -->
 {{#each events as |event| }}
 {{> event-details}}
@@ -49,4 +77,5 @@
 <nav class="pagination" role="navigation" aria-label="pagination">
   <a class="pagination-previous">Previous</a>
   <a class="pagination-next">Next page</a>
+<script src="../public/js/homepage.js"></script>
   

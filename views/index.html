@@ -11,53 +11,81 @@
 <body class="container">
   <div class="column is-justify-content-space-between">
     <header class="is-flex justify-space-between is-align-items-center">
-<nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" id="logo" href=#>
-        <img src="../public/img/TECH.png">
-      </a>
-    </div>
-  <div id="navbar" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item">
-          Home
-        </a>
-         <a class="navbar-item">
-          About
-        </a>
-      </div>
-         <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-primary">
-              <strong>Sign up</strong>
-            </a>
-            <a class="button is-light">
-              Log in
-            </a>
-          </div>
-        </div>
-      </div>
-  </div>
-  </nav>
-  </header>
-  <section class="section">
-              <div class="container">
-                <div class="columns is-centered">
-                  <div class="column is-half">
-                  <div>
-                      <form id="search-form" class="field has-addons user-form">
-                          <input id="search-input" class="user-entry input" type="text" placeholder="Find an event">
-                          <i class="fa-solid fa-magnifying-glass"></i>
-                          <div class="control">
-                          <button id="search-btn" class="button is-primary">Search</button>
-                          </div>
-                      </form>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="#">
+                <img src="../public/img/TECH.png" width="112" height="50">
+              </a>
+            </div>
+          <div id="navbar" class="navbar-menu">
+              <div class="navbar-start">
+                <a class="navbar-item">
+                  Home
+                </a>
+                 <a class="navbar-item">
+                  About
+                </a>
+              </div>
+                 <div class="navbar-end">
+                <div class="navbar-item">
+                  <div class="buttons">
+                    <a class="button is-primary">
+                      <strong>Sign up</strong>
+                    </a>
+                    <a class="button is-light">
+                      Log in
+                    </a>
                   </div>
-              </section>
-  <div class="pagination" role="navigation" aria-label="pagination">
-    <a class="pagination-previous">Previous</a>
-    <a class="pagination-next">Next page</a>
-    </div>
+                </div>
+              </div>
+          </div>
+          </nav>
+          </header>
+          <main>
+          <section class="section">
+                      <div class="container">
+                        <div class="columns is-centered">
+                          <div class="column is-half">
+                          <div>
+                              <form id="search-form" class="field has-addons user-form">
+                                  <input id="search-input" class="user-entry input" type="text" placeholder="Find an event">
+                                  <i class="fa-solid fa-magnifying-glass"></i>
+                                  <div class="dropdown is-primary">
+                                    <div class="dropdown-trigger">
+                                      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                                        <span> Category</span>
+                                        <span class="icon is-small">
+                                          <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                                  <div class="dropdown-content">
+                                    <a class="dropdown-item is-primary">
+                                      Career
+                                    </a>
+                                    <a href="#" class="dropdown-item is-primary">
+                                      Build knowledge
+                                    </a>
+                                    <a href="#" class="dropdown-item is-primary">
+                                      Share Interests
+                                    </a>  
+                                </div>
+                                </div>
+                        
+                                </form>
+                                <div class="control">
+                                    <button id="search-btn" class="button is-primary">Search</button> 
+                            </section>   
+                            </div>
+                        </div>
+                        </div>
+                     </form>
+                </div>
+            </main>
+          <nav class="pagination" role="navigation" aria-label="pagination">
+            <a class="pagination-previous">Previous</a>
+            <a class="pagination-next">Next page</a>
+          <script src="../public/js/homepage.js"></script>          
   </body>
     
