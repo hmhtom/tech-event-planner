@@ -3,24 +3,20 @@
     Dashboard 
   </p>
   <ul class="menu-list">
-    <li><a>Create Event</a></li>
-    <li><a>My Events</a></li>
-    <li><a>Attending</a></li>
+    <li><a href="/dashboard/{{new-event}}">Create Event</a></li>
+    <li><a href="/dashboard/{{event.user_id}}">My Events</a></li>
+    <li><a href="/dashboard/attending">Attending</a></li>
   </ul>
   <p class="menu-label">
     Settings
   </p>
   <ul class="menu-list">
-    <li><a>Update Password</a></li>
-    <li><a>Delete my account</a></li>
-<div class="container">
-  <div class="">
-    <h2>Welcome, name!</h2>
-  </div>
-</div>
-
-
-
-
-
+    <li><a href="/dashboard/{{user-update}}">Update Password</a></li>
+    <li><a href="/dashboard/{{user-update}}">Delete my account</a></li>
+<section class="section is-medium">
+  <h1 class="title">Welcome, {{user.name}}!</h1>
+  <h2 class="subtitle">
+    Check your next <strong>events</strong>
+  </h2>
+</section>
 <script src="./js/dashboard.js"></script>

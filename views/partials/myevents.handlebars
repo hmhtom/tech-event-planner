@@ -1,16 +1,16 @@
-  {{!-- {{#if event.length}} --}}
+  {{#if event.length}}
   <div class="">
     <h3>My events:</h3>
-    {{!-- {{#each events as |event|}} --}}
+    {{#each events as |event|}}
     <div class="">
       <div class="">
         <h4><a href="">Event name goes here</a></h4>
       </div>
       <div class="">
-        <button class="" data-id="event id goes here">DELETE</button>
+        <button class="button is-danger btn-delete" data-id="delete-id">DELETE</button>
       </div>
     </div>
-    {{!-- {{/each}} --}}
+    {{/each}}
   </div>
-  {{!-- {{/if}} --}}
+  {{/if}}
 </div>
