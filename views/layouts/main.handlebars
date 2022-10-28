@@ -7,12 +7,38 @@
    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="/css/style.css">
 </head>
-
 <body class="container">
   <div class="column is-justify-content-space-between">
     <header class="is-flex justify-space-between is-align-items-center">
-      <h1>Tech Events</h1>
-      <nav>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="#">
+                <img src="../public/img/TECH.png" width="112" height="50">
+              </a>
+            </div>
+          <div id="navbar" class="navbar-menu">
+              <div class="navbar-start">
+                <a class="navbar-item">
+                  Home
+                </a>
+                 <a class="navbar-item">
+                  About
+                </a>
+              </div>
+                 <div class="navbar-end">
+                <div class="navbar-item">
+                  <div class="buttons">
+                    <a class="button is-primary">
+                      <strong>Sign up</strong>
+                    </a>
+                    <a class="button is-light">
+                      Log in
+                    </a>
+                  </div>
+                </div>
+              </div>
+          </div>
+          </nav>
         <!-- login or logout conditions -->
         {{#if logged_in}}
         <a href="/dashboard">Profile</a> 
