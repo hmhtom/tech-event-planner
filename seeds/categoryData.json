@@ -1,6 +1,14 @@
 [
     {
-        "name":"Test Creere",
+        "name":"Career",
+        "event_id":1
+    },
+    {
+        "name":"Build Knowledge",
+        "event_id":1
+    },
+    {
+        "name":"Share Intersets",
         "event_id":1
     }
 ]

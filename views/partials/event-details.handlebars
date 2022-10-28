@@ -2,19 +2,19 @@
   <header class="card-header">
     <p class="card-header-title">
     <h2>
-      <a href="/event/{{event.id}}">{{event.name}}</a>
+      <a href="/event/{{id}}">{{name}}</a>
     </h2>
     <div class="card-content">
     <div class="content">
     <p>
-        {{event.date}}
+        {{date}}
     <p>
-      {{event.description}}
+      {{description}}
     </p>
     <p>
         number of participants
     </p>
      <footer class="card-footer">
-    <p>Created by {{event.user.name}} on {{format_date event.date_created}}</p>
+    <p>Created by {{event.user.name}} on {{date_created}}</p>
   </div>
 </div>

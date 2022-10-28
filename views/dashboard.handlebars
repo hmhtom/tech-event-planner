@@ -55,10 +55,10 @@
     </form>
   </div>
 
-  {{!-- {{#if event.length}} --}}
+  {{#if event.length}}
   <div class="">
     <h3>My events:</h3>
-    {{!-- {{#each events as |event|}} --}}
+    {{#each events as |event|}}
     <div class="">
       <div class="">
         <h4><a href="">Event name goes here</a></h4>
@@ -67,7 +67,7 @@
         <button class="" data-id="event id goes here">DELETE</button>
       </div>
     </div>
-    {{!-- {{/each}} --}}
+    {{/each}}
   </div>
   {{!-- {{/if}} --}}
 </div>
