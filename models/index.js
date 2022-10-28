@@ -20,7 +20,7 @@ Category.hasMany(Event,{
 
 });
 Event.belongsTo(Category, {
-    foreignKey: 'event_id',
+    foreignKey: 'catego_id',
     onDelete: 'CASCADE'
   });
 
