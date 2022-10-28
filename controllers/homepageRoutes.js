@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User, Category, Event, Participant } = require("../models");
-const withAuth = require("../utils/withAuth");
+const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
@@ -31,8 +31,16 @@ router.get("/", async (req, res) => {
           }));
     }
     const events = eventData.map((event) => event.get({ plain: true }));
+
+    const categoryData = await Category.findAll();
+
+    const categories = categoryData.map((category) =>
+      category.get({ plain: true })
+    );
+
     res.render("homepage", {
       events,
+      categories,
       current_user_id: req.session.user_id,
       current_username: req.session.username,
       logged_in: req.session.logged_in,
