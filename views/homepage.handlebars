@@ -1,18 +1,51 @@
-<div class="">
-  <div class="">
-    <h2>
-      <a href="">name of the event</a>
-    </h2>
-    <p>
-        Day and time of event
-    <p>
-      description of the event
-    </p>
-    <p>
-        number of participants
-    </p>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="#">
+      <img src="../public/img/TECH.png" width="112" height="50">
+    </a>
   </div>
+<div id="navbar" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item">
+        Home
+      </a>
+       <a class="navbar-item">
+        About
+      </a>
+    </div>
+       <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary">
+            <strong>Sign up</strong>
+          </a>
+          <a class="button is-light">
+            Log in
+          </a>
+        </div>
+      </div>
+    </div>
 </div>
+</nav>
+<section class="section">
+            <div class="container">
+              <div class="columns is-centered">
+                <div class="column is-half">
+                <div>
+                    <form id="search-form" class="field has-addons user-form">
+                        <input id="search-input" class="user-entry input" type="text" placeholder="Find an event">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <div class="control">
+                        <button id="search-btn" class="button is-primary">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+<!-- Loop over events -->
+{{#each events as |event| }}
+{{> event-details}}
+{{/each}}
 <nav class="pagination" role="navigation" aria-label="pagination">
   <a class="pagination-previous">Previous</a>
   <a class="pagination-next">Next page</a>
