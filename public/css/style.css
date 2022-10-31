@@ -27,7 +27,16 @@ main {
     height: 100px;
     padding: 3rem 1.5rem 2rem;
 }
-
+.menu-label{
+    font-size: 20px;
+    font-weight: bolder;
+    color:rgb(186, 20, 150);
+    text-shadow: 2px 2px #00eaff;
+}
+.menu-list {
+    font-size: 16px;
+    font-weight: bolder;
+}
 #navbar-content {
     height: 46px;
     padding: 2px;
@@ -59,4 +68,16 @@ main {
     margin-right: 20px;
     padding: 30px;
     border-radius: 10%;
+}
+#card-about {
+    font-weight: bolder;
+    color:rgb(186, 20, 150);
+    text-shadow: 2px 2px #00eaff;
+}
+#about-list li{
+    line-height: 40px;
+}
+#about-list i {
+    height: 30px;
+    width: 30px;
 }

@@ -1,27 +1,29 @@
 
-<aside class="menu">
-  <p class="menu-label">
-    Dashboard 
-  </p>
-  <ul class="menu-list">
-    <li><a href="/dashboard/{{update_event}}">Create Event</a></li>
-    <li><a href="/dashboard/{{current_user_id}}">My Events</a></li>
-    <li><a href="/dashboard/attending">Attending</a></li>
-  </ul>
+  <section class="main-content columns is-fullheight">
+    <aside class="column is-3 is-narrow-mobile is-fullheight section is-hidden-mobile mt-5">
+      <p class="menu-label text is-">
+        Dashboard 
+      </p>
+      <ul class="menu-list">
+        <li><a href="/dashboard/{{update_event}}">Create Event</a></li>
+        <li><a href="/dashboard/{{current_user_id}}">My Events</a></li>
+        <li><a href="/dashboard/attending">Attending</a></li>
+      </ul>
 
-  <p class="menu-label">
-    Settings
-  </p>
- 
-  <ul class="menu-list">
-    <li><a href="/dashboard/">Update Password</a></li>
-    <li><a href="/dashboard/">Delete my account</a></li>
-     </aside>
-<section class="section is-medium">
-  <h1 class="title">Welcome, {{current_username}}!</h1>
-  <h2 class="subtitle">
-    Check your next <strong>events</strong>
-  </h2>
-</section>
+      <p class="menu-label">
+        Settings
+      </p>
+    
+      <ul class="menu-list">
+        <li><a href="/dashboard/">Update Password</a></li>
+        <li><a href="/dashboard/">Delete my account</a></li>
+    </aside>
+    <section class="section is-medium">
+    <h1 class="title is-2">Welcome, {{current_username}}!</h1>
+    <h2 class="subtitle mt-4">
+      Check your next <strong class="has-text-danger">events</strong>
+    </h2>
+    </section>
+  </section>
 
 <script src="/js/dashboard.js"></script>
