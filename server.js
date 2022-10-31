@@ -12,7 +12,7 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 //Import server route controller
 const routes = require("./controllers");
 //Import Helper function for Views
-// const helpers = require("./utils/helper");
+const helpers = require("./utils/helper");
 
 //Initializing Express app
 const app = express();
@@ -40,7 +40,7 @@ const session_config = {
 app.use(session(session_config));
 
 //Initializing View Engine
-const hbs = exphbs.create();
+const hbs = exphbs.create({ helpers });
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
