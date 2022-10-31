@@ -1,51 +1,49 @@
-<div class="column">
-  <div class="column is-6">
+<div class="column is-6">
     <h3>Create a New Event:</h3>
-    <form class="form new-event">
-      <div class="">
-        <label>Name of Event:</label>
-        <input class="" type="text" id="eventName" name="event-name" />
+    <div class="field">
+        <label class="label">Name of Event:</label>
+        <div class="control">
+          <input class="input" type="text" id="eventName" name="event-name" />
+        </div>
       </div>
-        <div class="">
-        <label>Date:</label>
+       <div class="field">
+        <label class="label">Date:</label>
         <input class="" type="date" id="eventDate" name="event-date" />
       </div>
-      <div class="">
-        <label>Description:</label>
+     <div class="field">
+        <label class="label">Description:</label>
         <textarea class="" id="eventDescription" name="event-description"></textarea>
       </div>
-      <div class="">
-         <div class="">
-        <label>Location:</label>
-        <input class="" type="text" id="eventLocation" name="event-location" />
+      <div class="field">
+        <label class="label">Location:</label>
+        <input class="input" type="text" id="eventLocation" name="event-location" />
       </div>
-       <div class="">
-        <label>Needed funding ($):</label>
+      <div class="field">
+        <label class="label">Needed funding ($):</label>
         <input class="" type="number" id="eventFunding" name="event-funding" />
       </div>
-      <div class="dropdown is-active">
-  <div class="dropdown-trigger">
-    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-      <span>Dropdown button</span>
-      <span class="icon is-small">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </button>
-  </div>
-  <div class="dropdown-menu" id="dropdown-menu" role="menu">
-    <div class="dropdown-content">
-      <a href="#" class="dropdown-item">
-        Category
-      </a>
-      <a class="dropdown-item is-active">
-        Career
-      </a>
-      <a href="#" class="dropdown-item is-active">
-        Build knowledge
-      </a>
-       <a href="#" class="dropdown-item is-active">
-        Share Interests
-      </a>
+    <div class="dropdown is-primary">
+      <div class="dropdown-trigger">
+        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+          <span> Category</span>
+          <span class="icon is-small">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>
+      </button>
+    </div>
+      <div class="dropdown-menu" id="dropdown-menu" role="menu">
+        <div class="dropdown-content">
+          <a class="dropdown-item is-primary">
+            Career
+          </a>
+          <a href="#" class="dropdown-item is-primary">
+            Build knowledge
+          </a>
+          <a href="#" class="dropdown-item is-primary">
+            Share Interests
+          </a>  
+      </div>
+      </div>
         <button type="submit" class="">Create</button>
       </div>
     </form>

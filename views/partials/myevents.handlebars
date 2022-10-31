@@ -1,16 +1,22 @@
   {{#if event.length}}
-  <div class="">
+  <div class="columns">
     <h3>My events:</h3>
+    <div class="columns is-6">
     {{#each events as |event|}}
-    <div class="">
-      <div class="">
-        <h4><a href="">Event name goes here</a></h4>
+    <div class="card">
+      <div class="card-header">
+        <p class="card-header-title">{{event.name}}</p>
       </div>
-      <div class="">
+      <div class="card-content">
+        <div class="content">
+          {{event.date}}
+          {{event.description}}
+        </div>
         <button class="button is-danger btn-delete" data-id="delete-id">DELETE</button>
       </div>
     </div>
     {{/each}}
   </div>
   {{/if}}
+</div>
 </div>
