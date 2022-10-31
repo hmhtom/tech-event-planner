@@ -113,6 +113,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
       ...user,
       current_user_id: req.session.user_id,
       current_username: req.session.username,
+      logged_in: req.session.logged_in,
     });
   } catch (error) {
     res.status(500).json(error);
@@ -136,6 +137,7 @@ router.get("/dashboard/update-event/:id", withAuth, async (req, res) => {
     event.user_id === req.session.id
       ? res.render("update-event", {
           current_user_id: req.session.user_id,
+          logged_in: req.session.logged_in,
         })
       : res.redirect("/");
   } catch (error) {
