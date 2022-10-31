@@ -15,6 +15,10 @@ main {
 .navbar-item {
     margin-right: 15px;
 }
+.is-centered {
+    display: flex;
+    align-items: center;
+  }
 .footer-container {
     position: fixed; 
     bottom: 0; 
@@ -38,4 +42,21 @@ main {
     flex-direction: row;
     box-sizing: border-box;
     margin-left: 130%;
+}
+#forms{
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+#login-form{
+    margin-right: 20px;
+    padding: 30px;
+    padding-bottom: 30%;
+    border-radius: 10%;
+
+}
+#signup-form{
+    margin-right: 20px;
+    padding: 30px;
+    border-radius: 10%;
 }
