@@ -21,7 +21,7 @@
       <header class="is-flex justify-space-between is-align-items-center">
         <nav class="navbar" role="navigation" aria-label="main navigation">
           <div class="navbar-brand">
-            <a class="navbar-item" href="#">
+            <a class="navbar-item" href="/">
               <img src="/img/TECH.png" width="112" height="50" />
             </a>
           </div>
@@ -30,7 +30,7 @@
               <a class="navbar-item button is-primary is-rounded is-outlined">
                 Home
               </a>
-              <a class="navbar-item button is-primary is-rounded is-outlined">
+              <a href = "/about" class="navbar-item button is-primary is-rounded is-outlined">
                 About
               </a>
             </div>
@@ -38,6 +38,9 @@
               <div class="navbar-item">
                 <div class="buttons">
                   {{#if logged_in}}
+                    <a href="/dashboard" class="button is-primary">
+                      Dashboard
+                    </a>
                     <a id="logout" class="button is-light">
                       Log out
                     </a>
@@ -65,6 +68,7 @@
     {{#if logged_in}}
       <script src="/js/logout.js"></script>
     {{/if}}
+    <script src="/js/homepage.js"></script>
     <footer class="footer footer-container">
       <div class="content has-text-centered">
         <p>
