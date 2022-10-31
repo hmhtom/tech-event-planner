@@ -1,20 +1,25 @@
 <div class="card">
   <header class="card-header">
     <p class="card-header-title">
-    <h2>
-      <a href="/event/{{id}}">{{name}}</a>
-    </h2>
+      <h2>
+        <a href="/event/{{id}}">{{title}}</a>
+      </h2>
+    </p>
     <div class="card-content">
-    <div class="content">
-    <p>
-        {{date}}
-    <p>
-      {{description}}
-    </p>
-    <p>
-        number of participants
-    </p>
-     <footer class="card-footer">
-    <p>Created by {{event.user.name}} on {{event.date_created}}</p>
-  </div>
+      <div class="content">
+        <p>
+          {{date}}
+        </p>
+        <p>
+          {{description}}
+        </p>
+        <p>
+          number of participants
+        </p>
+        <footer class="card-footer">
+          <p>Created by {{user.name}} on {{date_created}}</p>
+        </footer>
+      </div>
+    </div>
+  </header>
 </div>
