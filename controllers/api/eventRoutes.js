@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Event } = require("../../models");
+const { Event, Participant } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 router.post("/", withAuth, async (req, res) => {
@@ -50,6 +50,33 @@ router.delete("/:id", withAuth, async (req, res) => {
       },
     });
     res.status(200).json(eventData);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+router.post("/participant", async (req, res) => {
+  try {
+    const participantData = await Participant.create({
+      user_id: req.session.user_id,
+      event_id: req.body.event_id,
+    });
+    res.status(200).json(participantData);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
+});
+
+router.delete("/participant/:id", async (req, res) => {
+  try {
+    const participantData = await Participant.destroy({
+      where: {
+        user_id: req.session.user_id,
+        event_id: req.params.id,
+      },
+    });
+    res.status(200).json(participantData);
   } catch (error) {
     res.status(500).json(error);
   }
