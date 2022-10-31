@@ -1,50 +1,46 @@
-<main style="background-position: center; background-image: url('../public/img/background.png')"></main>
 <section class="section">
-            <div class="container">
-              <div class="columns is-centered">
-                <div class="column is-half">
-                <div>
-                    <form id="search-form" class="field has-addons user-form">
-                        <input id="search-input" class="user-entry input" type="text" placeholder="Find an event">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <div class="dropdown is-primary">
-                          <div class="dropdown-trigger">
-                            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                              <span> Category</span>
-                              <span class="icon is-small">
-                                <i class="fas fa-angle-down" aria-hidden="true"></i>
-                              </span>
-                          </button>
-                      </div>
-                      <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                        <div class="dropdown-content">
-                          <a class="dropdown-item is-primary">
-                            Career
-                          </a>
-                          <a href="#" class="dropdown-item is-primary">
-                            Build knowledge
-                          </a>
-                          <a href="#" class="dropdown-item is-primary">
-                            Share Interests
-                          </a>  
-                      </div>
-                      </div>
-                      </form>
-                      <div class="control">
-                          <button id="search-btn" class="button is-primary">Search</button> 
-                  </section>   
-                  </div>
-              </div>
-              </div>
-            </form>
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <div class="dropdown is-primary">
+          <div class="dropdown-trigger">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+              <span> Event by Category</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <a href="/" class="dropdown-item is-primary">
+                All Events
+              </a>
+              <a href="/career" class="dropdown-item is-primary">
+                Career
+              </a>
+              <a href="/knowledge" class="dropdown-item is-primary">
+                Build knowledge
+              </a>
+              <a href="/share-interest" class="dropdown-item is-primary">
+                Share Interests
+              </a>  
+            </div>
+          </div>
+        </div>
       </div>
-  </main>
-<!-- Loop over events -->
+    </div>
+  </div>
+</section>
+<div>
 {{#each events as |event| }}
 {{> event-details}}
 {{/each}}
+</div>
+
 <nav class="pagination" role="navigation" aria-label="pagination">
   <a class="pagination-previous">Previous</a>
   <a class="pagination-next">Next page</a>
-<script src="../public/js/homepage.js"></script>
+</nav>
+<script src="/js/homepage.js"></script>
   
