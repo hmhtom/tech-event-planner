@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Event extends Model {}
 
@@ -22,33 +22,31 @@ Event.init(
     date: {
       type: DataTypes.DATE,
       allowNull: false,
-   
     },
     location: {
       type: DataTypes.STRING,
-     
     },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
-        key: 'id',
+        model: "user",
+        key: "id",
       },
     },
     category_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'category',
-          key: 'id',
-        },
+      type: DataTypes.INTEGER,
+      references: {
+        model: "category",
+        key: "id",
       },
+    },
   },
   {
     sequelize,
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'event',
+    modelName: "event",
   }
 );
 

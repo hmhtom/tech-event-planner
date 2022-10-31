@@ -6,10 +6,12 @@ const Participant = require("./Participant");
 
 User.hasMany(Event, {
   foreignKey: "user_id",
+  as: "created",
   onDelete: "CASCADE",
 });
 Event.belongsTo(User, {
   foreignKey: "user_id",
+  as: "creator",
   onDelete: "CASCADE",
 });
 Category.hasMany(Event, {
@@ -21,15 +23,6 @@ Event.belongsTo(Category, {
   onDelete: "CASCADE",
 });
 
-Event.belongsToMany(User, {
-  // Define the third table needed to store the foreign keys
-  through: {
-    model: Participant,
-    unique: true,
-  },
-  foreignKey: "event_id",
-  otherKey: "user_id",
-});
 User.belongsToMany(Event, {
   // Define the third table needed to store the foreign keys
   through: {
@@ -37,6 +30,19 @@ User.belongsToMany(Event, {
     unique: true,
   },
   foreignKey: "user_id",
+  as: "attend",
   otherKey: "event_id",
 });
+
+Event.belongsToMany(User, {
+  // Define the third table needed to store the foreign keys
+  through: {
+    model: Participant,
+    unique: true,
+  },
+  foreignKey: "event_id",
+  as: "attendee",
+  otherKey: "user_id",
+});
+
 module.exports = { User, Event, Participant, Category };
