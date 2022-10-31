@@ -1,18 +1,23 @@
 <!-- Loop over events -->
 {{#each events as |event| }}
-<div class="card">
-  <header class="card-header">
-  <h2>{{event.name}}</h2>
-  <p>{{event.date}}</p>
-  <p>{{event.location}}</p>
-  <p>{{event.description}}</p>
-  <p>Created by {{username}} on date DD MM YY</p>
-  <p>
-    Number of participants
-  </p>
-  <p>
-    <button class="button is-danger is-rounded">I'm Attending</button>
-  </p>
+<div class="columns is-centered">
+  <div class="column is-4"> 
+    <div class="card $card-shadow">
+      <header class="card-header">
+        <h2>{{event.name}}</h2>
+        <p>{{event.date}}</p>
+      </header>  
+        <p>{{event.location}}</p>
+        <p>{{event.description}}</p>
+        <p>Created by {{username}} on date DD MM YY</p>
+        <p>
+        Number of participants
+        </p>
+        <p>
+        <button class="button is-danger is-rounded">I'm Attending</button>
+        </p>
+    </div>
+  </div>  
 </div>
 {{/each}}
 <script src="/js/event.js"></script>
