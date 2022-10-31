@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet"/>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="../public/css/style.css">
 </head>
-
 <body class="container">
-  <div class="column is-justify-content-space-between">
+  <div class="is-justify-content-space-between">
     <header class="is-flex justify-space-between is-align-items-center">
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
@@ -18,30 +18,30 @@
               </a>
             </div>
           <div id="navbar" class="navbar-menu">
-              <div class="navbar-start">
-                <a class="navbar-item">
+              <div class="navbar-start" id="navbar-content">
+                <a class="navbar-item button is-primary is-rounded is-outlined">
                   Home
                 </a>
-                 <a class="navbar-item">
+                 <a class="navbar-item button is-primary is-rounded is-outlined">
                   About
                 </a>
               </div>
-                 <div class="navbar-end">
-                <div class="navbar-item">
-                  <div class="buttons">
-                    <a class="button is-primary">
-                      <strong>Sign up</strong>
-                    </a>
-                    <a class="button is-light">
-                      Log in
-                    </a>
-                  </div>
-                </div>
+                <div class="navbar-end" id="navbarend-content">
+                    <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary">
+                        <strong>Sign up</strong>
+                        </a>
+                        <a class="button is-light">
+                        Log in
+                        </a>
+                    </div>
+                    </div>
               </div>
           </div>
           </nav>
           </header>
-          <main>
+          <main style="background-position: center; background-image: url('../public/img/background.png')">
           <section class="section">
                       <div class="container">
                         <div class="columns is-centered">
@@ -49,7 +49,7 @@
                           <div>
                               <form id="search-form" class="field has-addons user-form">
                                   <input id="search-input" class="user-entry input" type="text" placeholder="Find an event">
-                                  <i class="fa-solid fa-magnifying-glass"></i>
+                                 
                                   <div class="dropdown is-primary">
                                     <div class="dropdown-trigger">
                                       <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
@@ -72,20 +72,51 @@
                                     </a>  
                                 </div>
                                 </div>
-                        
                                 </form>
-                                <div class="control">
-                                    <button id="search-btn" class="button is-primary">Search</button> 
+                                <p class="buttons">
+                                    <button id="search-btn" class="button is-primary">
+                                        <span class="icon">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </span>
+                                        <span>Search</span>   
+                                    </button> 
                             </section>   
                             </div>
                         </div>
                         </div>
                      </form>
                 </div>
+                <div class="columns is-centered">
+                    <div class="column is-4"> 
+                      <div class="card">
+                        <div class="card-image">
+                          <figure class="image is-4by3">
+                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                          </figure>
+                        </div>
+                        <div class="card-content">
+                          <div class="content">
+                              texte ici
+                              <br>
+                          </div>
+                        </div>
+                      </div>
+                  
+                    </div>
+                  </div>
+                <nav class="pagination" role="navigation" aria-label="pagination">
+                    <a class="pagination-previous">Previous</a>
+                    <a class="pagination-next">Next page</a>
+                </nav>
             </main>
-          <nav class="pagination" role="navigation" aria-label="pagination">
-            <a class="pagination-previous">Previous</a>
-            <a class="pagination-next">Next page</a>
+          
           <script src="../public/js/homepage.js"></script>          
   </body>
-    
+  <footer class="footer footer-container">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Made</strong> by <a href="https://github.com/puentedg">Gabriella,</a> <a href="https://github.com/safazgolli">Safa</a> and 
+        <a href="https://github.com/hmhtom">Alex</a>
+      </p>
+    </div>
+  </footer>

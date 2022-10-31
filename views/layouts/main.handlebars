@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="/css/style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="container">
   <div class="column is-justify-content-space-between">
@@ -41,7 +42,7 @@
           </nav>
         <!-- login or logout conditions -->
         {{#if logged_in}}
-        <a href="/dashboard">Profile</a> 
+        <a href="/dashboard">My account</a> 
         <button class="button" id="logout">Logout</button>
         {{else}}
         <a href="/login">Login</a>
@@ -60,5 +61,12 @@
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
-
+ <footer class="footer footer-container">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Made</strong> by <a href="https://github.com/puentedg">Gabriella,</a> <a href="https://github.com/safazgolli">Safa</a> and 
+        <a href="https://github.com/hmhtom">Alex</a>
+      </p>
+    </div>
+  </footer>
 </html>
