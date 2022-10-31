@@ -263,8 +263,17 @@ router.get("/event/:id", async (req, res) => {
       ],
     });
     const event = eventData.get({ plain: true });
+
+    const userAttend = eventData.attendee.find(
+      (user) => user.id === req.session.user_id
+    );
+
+    let attended;
+    userAttend ? (attended = true) : (attended = false);
+
     res.render("event", {
       ...event,
+      attended,
       current_user_id: req.session.user_id,
       current_username: req.session.username,
       logged_in: req.session.logged_in,
