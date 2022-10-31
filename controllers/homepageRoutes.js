@@ -77,6 +77,20 @@ router.get("/", async (req, res) => {
     res.status(500).json(error);
   }
 });
+router.get("/about", async (req, res) => {
+  try {
+
+
+    res.render("about", {
+     
+      current_user_id: req.session.user_id,
+      current_username: req.session.username,
+      logged_in: req.session.logged_in,
+    });
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
 
 router.get("/login", async (req, res) => {
   try {
