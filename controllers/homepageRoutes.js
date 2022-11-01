@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Event } = require("../models");
+const { User, Event, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
@@ -273,6 +273,10 @@ router.get("/event/:id", async (req, res) => {
             exclude: ["password", "admin"],
           },
           through: { attributes: [] },
+        },
+        {
+          model: Comment,
+          include: [{ model: User, attributes: { exclude: ["password"] } }],
         },
       ],
     });
