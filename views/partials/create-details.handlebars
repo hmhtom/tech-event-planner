@@ -6,9 +6,6 @@
   </div>
   <div class="card-content">
     <div class="content">
-      Host by:
-      {{creator.username}}
-      <br />
       Event Time:
       {{format_date date}}
       <br />
@@ -16,5 +13,7 @@
       {{location}}
       <br />
     </div>
+    <button class="button is-info btn-update" data-id="{{id}}">Edit</button>
+    <button class="button is-danger btn-delete" data-id="{{id}}">DELETE</button>
   </div>
 </div>

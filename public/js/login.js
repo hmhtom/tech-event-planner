@@ -14,10 +14,9 @@ const loginForm = async (event) => {
     });
 
     if (response.ok) {
-      // If login is successful -> stay on same page
       document.location.replace("/");
     } else {
-      alert(response.statusText);
+      alert("Invalid Email or Password.");
     }
   }
 };
