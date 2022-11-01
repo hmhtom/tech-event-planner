@@ -45,4 +45,22 @@ Event.belongsToMany(User, {
   otherKey: "user_id",
 });
 
-module.exports = { User, Event, Participant, Category };
+Event.hasMany(Comment, {
+  foreignKey: "event_id",
+  onDelete: "CASCADE",
+});
+Comment.belongsTo(Event, {
+  foreignKey: "event_id",
+  onDelete: "CASCADE",
+});
+
+User.hasMany(Comment, {
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
+});
+Comment.belongsTo(User, {
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
+});
+
+module.exports = { User, Event, Participant, Category, Comment };
