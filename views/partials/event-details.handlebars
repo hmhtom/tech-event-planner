@@ -1,11 +1,14 @@
 <div class="card">
-  <header class="card-header">
+  <header class="card-header has-background-danger-light">
     <p class="card-header-title">
-      <h2>
-        <a href="/event/{{id}}">{{title}}</a>
-      </h2>
+      <a href="/event/{{id}}">
+      <h1 class="card-header-title is-size-2">
+        {{title}}
+      </h1>
+      </a>
     </p>
-    <div class="card-content">
+    </header>
+    <div class="card-content has-background-primary-light">
       <div class="content">
         <p>
           {{date}}
@@ -21,5 +24,4 @@
         </footer>
       </div>
     </div>
-  </header>
 </div>
