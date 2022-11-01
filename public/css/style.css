@@ -1,62 +1,64 @@
 main {
-    height: 100vh;
+  height: 100vh;
+  background-image: url("../img/background.png");
+  background-position: center;
+  background-repeat: repeat;
 }
 
 .navbar {
-    margin-top: 20px;
-    padding: 10px;
-  }
+  margin-top: 20px;
+  padding: 10px;
+}
 .navbar-item img {
-    height: 150px;
-    width: 160px;
-    max-height: 5rem;
+  height: 150px;
+  width: 160px;
+  max-height: 5rem;
 }
 
 .navbar-item {
-    margin-right: 15px;
+  margin-right: 15px;
 }
 .is-centered {
-    display: flex;
-    align-items: center;
-  }
+  display: flex;
+  align-items: center;
+}
 .footer-container {
-    position: fixed; 
-    bottom: 0; 
-    left: 0; 
-    right: 0;
-    height: 100px;
-    padding: 3rem 1.5rem 2rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  padding: 3rem 1.5rem 2rem;
 }
 
 #navbar-content {
-    height: 46px;
-    padding: 2px;
-    margin-top: 25px;
-    margin-left: 50px;
-    font-size: 18px;
-    font-weight: bolder;
+  height: 46px;
+  padding: 2px;
+  margin-top: 25px;
+  margin-left: 50px;
+  font-size: 18px;
+  font-weight: bolder;
 }
 
 #navbarend-content {
-    display: flex;
-    flex-direction: row;
-    box-sizing: border-box;
-    margin-left: 130%;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  margin-left: 130%;
 }
-#forms{
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
+#forms {
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
-#login-form{
-    margin-right: 20px;
-    padding: 30px;
-    padding-bottom: 30%;
-    border-radius: 10%;
-
+#login-form {
+  margin-right: 20px;
+  padding: 30px;
+  padding-bottom: 30%;
+  border-radius: 10%;
 }
-#signup-form{
-    margin-right: 20px;
-    padding: 30px;
-    border-radius: 10%;
+#signup-form {
+  margin-right: 20px;
+  padding: 30px;
+  border-radius: 10%;
 }

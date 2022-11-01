@@ -19,12 +19,24 @@ const app = express();
 //Specifing express server port
 const PORT = process.env.PORT || 3001;
 
+//Use Morgan to log request info
+const morgan = require("morgan");
+
+//Only logging error info
+app.use(
+  morgan("tiny", {
+    skip: function (req, res) {
+      return res.statusCode < 400;
+    },
+  })
+);
+
 //Session Initialization
 //Express-session config
 const session_config = {
   secret: process.env.SESSION_SECRET,
   cookie: {
-    maxAge: 60 * 60 * 1000, //Cookie expired after a day
+    maxAge: 60 * 60 * 1000, //Cookie expired after an hour
     httpOnly: true,
     secure: false,
     sameSite: "strict",

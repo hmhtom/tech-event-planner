@@ -22,6 +22,60 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.put("/username", async (req, res) => {
+  try {
+    await User.update(
+      {
+        username: req.body.username,
+      },
+      {
+        where: {
+          id: req.session.user_id,
+        },
+      }
+    );
+
+    const userData = await User.findOne({
+      where: {
+        id: req.session.user_id,
+      },
+    });
+    const user = userData.get({ plain: true });
+
+    req.session.save(() => {
+      req.session.user_name = user.username;
+      res.status(200).json(user);
+    });
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+router.put("/password", async (req, res) => {
+  try {
+    await User.update(
+      {
+        password: req.body.password,
+      },
+      {
+        where: {
+          id: req.session.user_id,
+        },
+        individualHooks: true,
+      }
+    );
+    const userData = await User.findOne({
+      where: {
+        id: req.session.user_id,
+      },
+    });
+    const user = userData.get({ plain: true });
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({
