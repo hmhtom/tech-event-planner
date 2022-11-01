@@ -27,10 +27,16 @@
           </div>
           <div id="navbar" class="navbar-menu">
             <div class="navbar-start" id="navbar-content">
-              <a class="navbar-item button is-primary is-rounded is-outlined">
+              <a
+                href="/"
+                class="navbar-item button is-primary is-rounded is-outlined"
+              >
                 Home
               </a>
-              <a href = "/about" class="navbar-item button is-primary is-rounded is-outlined">
+              <a
+                href="/about"
+                class="navbar-item button is-primary is-rounded is-outlined"
+              >
                 About
               </a>
             </div>
@@ -39,10 +45,10 @@
                 <div class="buttons">
                   {{#if logged_in}}
                     <a href="/dashboard" class="button is-primary">
-                      Dashboard
+                      <strong>Dashboard</strong>
                     </a>
                     <a id="logout" class="button is-light">
-                      Log out
+                      <strong>Log out</strong>
                     </a>
                   {{else}}
                     <a href="/login" class="button is-primary">
@@ -55,9 +61,7 @@
           </div>
         </nav>
       </header>
-      <main
-        style="background-position: center; background-image: url('img/background.png')"
-      >
+      <main>
         {{{body}}}
       </main>
       <footer>
@@ -68,7 +72,6 @@
     {{#if logged_in}}
       <script src="/js/logout.js"></script>
     {{/if}}
-    <script src="/js/homepage.js"></script>
     <footer class="footer footer-container">
       <div class="content has-text-centered">
         <p>
@@ -82,5 +85,4 @@
       </div>
     </footer>
   </body>
-
 </html>
