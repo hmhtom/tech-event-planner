@@ -40,6 +40,13 @@ main {
     font-size: 16px;
     font-weight: bolder;
 }
+.header-style {
+    font-size: 40px;
+    font-weight: bolder;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:rgb(186, 20, 150);
+    text-shadow: 2px 2px #00eaff;
+}
 #navbar-content {
   height: 46px;
   padding: 2px;
@@ -71,7 +78,6 @@ main {
   padding: 30px;
   border-radius: 10%;
 }
-<<<<<<< HEAD
 #signup-form{
     margin-right: 20px;
     padding: 30px;
@@ -89,5 +95,3 @@ main {
     height: 30px;
     width: 30px;
 }
-=======
->>>>>>> c35e91f6714a3bf345011a0de8a0c8e481268ef5
