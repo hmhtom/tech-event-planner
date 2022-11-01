@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Category, Event } = require("../models");
+const { User, Event } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
@@ -8,6 +8,7 @@ router.get("/", async (req, res) => {
     req.query.page
       ? (eventData = await Event.findAll({
           limit: 5,
+          order: [["date", "ASC"]],
           offset: (parseInt(req.query.page) - 1) * 5,
           include: [
             {
@@ -19,6 +20,7 @@ router.get("/", async (req, res) => {
         }))
       : (eventData = await Event.findAll({
           limit: 5,
+          order: [["date", "ASC"]],
           include: [
             {
               model: User,
@@ -33,7 +35,7 @@ router.get("/", async (req, res) => {
     res.render("homepage", {
       events,
       current_user_id: req.session.user_id,
-      current_username: req.session.username,
+      current_username: req.session.user_name,
       logged_in: req.session.logged_in,
     });
   } catch (error) {
@@ -50,6 +52,7 @@ router.get("/career", async (req, res) => {
             category_id: 1,
           },
           limit: 5,
+          order: [["date", "ASC"]],
           offset: (parseInt(req.query.page) - 1) * 5,
           include: [
             {
@@ -64,6 +67,7 @@ router.get("/career", async (req, res) => {
             category_id: 1,
           },
           limit: 5,
+          order: [["date", "ASC"]],
           include: [
             {
               model: User,
@@ -78,7 +82,7 @@ router.get("/career", async (req, res) => {
     res.render("homepage", {
       events,
       current_user_id: req.session.user_id,
-      current_username: req.session.username,
+      current_username: req.session.user_name,
       logged_in: req.session.logged_in,
     });
   } catch (error) {
@@ -95,6 +99,7 @@ router.get("/knowledge", async (req, res) => {
             category_id: 2,
           },
           limit: 5,
+          order: [["date", "ASC"]],
           offset: (parseInt(req.query.page) - 1) * 5,
           include: [
             {
@@ -109,6 +114,7 @@ router.get("/knowledge", async (req, res) => {
             category_id: 2,
           },
           limit: 5,
+          order: [["date", "ASC"]],
           include: [
             {
               model: User,
@@ -123,7 +129,7 @@ router.get("/knowledge", async (req, res) => {
     res.render("homepage", {
       events,
       current_user_id: req.session.user_id,
-      current_username: req.session.username,
+      current_username: req.session.user_name,
       logged_in: req.session.logged_in,
     });
   } catch (error) {
@@ -140,6 +146,7 @@ router.get("/share-interest", async (req, res) => {
             category_id: 3,
           },
           limit: 5,
+          order: [["date", "ASC"]],
           offset: (parseInt(req.query.page) - 1) * 5,
           include: [
             {
@@ -154,6 +161,7 @@ router.get("/share-interest", async (req, res) => {
             category_id: 3,
           },
           limit: 5,
+          order: [["date", "ASC"]],
           include: [
             {
               model: User,
@@ -168,21 +176,19 @@ router.get("/share-interest", async (req, res) => {
     res.render("homepage", {
       events,
       current_user_id: req.session.user_id,
-      current_username: req.session.username,
+      current_username: req.session.user_name,
       logged_in: req.session.logged_in,
     });
   } catch (error) {
     res.status(500).json(error);
   }
 });
+
 router.get("/about", async (req, res) => {
   try {
-
-
     res.render("about", {
-     
       current_user_id: req.session.user_id,
-      current_username: req.session.username,
+      current_username: req.session.user_name,
       logged_in: req.session.logged_in,
     });
   } catch (error) {
@@ -206,10 +212,12 @@ router.get("/dashboard", withAuth, async (req, res) => {
         {
           model: Event,
           as: "created",
+          order: [["date", "ASC"]],
         },
         {
           model: Event,
           as: "attend",
+          order: [["date", "ASC"]],
           include: {
             model: User,
             as: "creator",
@@ -221,21 +229,14 @@ router.get("/dashboard", withAuth, async (req, res) => {
     });
     const user = userData.get({ plain: true });
 
+    const query = req.query.opt;
+
     res.render("dashboard", {
       ...user,
+      query,
       current_user_id: req.session.user_id,
-      current_username: req.session.username,
+      current_username: req.session.user_name,
       logged_in: req.session.logged_in,
-    });
-  } catch (error) {
-    res.status(500).json(error);
-  }
-});
-
-router.get("/dashboard/new-event", withAuth, async (req, res) => {
-  try {
-    res.render("new-event", {
-      current_user_id: req.session.user_id,
     });
   } catch (error) {
     res.status(500).json(error);
@@ -246,12 +247,11 @@ router.get("/dashboard/update-event/:id", withAuth, async (req, res) => {
   try {
     const eventData = await Event.findByPk(req.params.id);
     const event = eventData.get({ plain: true });
-    event.user_id === req.session.id
-      ? res.render("update-event", {
-          current_user_id: req.session.user_id,
-          logged_in: req.session.logged_in,
-        })
-      : res.redirect("/");
+    res.render("update-event", {
+      ...event,
+      current_user_id: req.session.user_id,
+      logged_in: req.session.logged_in,
+    });
   } catch (error) {
     res.status(500).json(error);
   }
@@ -289,7 +289,7 @@ router.get("/event/:id", async (req, res) => {
       ...event,
       attended,
       current_user_id: req.session.user_id,
-      current_username: req.session.username,
+      current_username: req.session.user_name,
       logged_in: req.session.logged_in,
     });
   } catch (error) {

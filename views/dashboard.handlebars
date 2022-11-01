@@ -1,4 +1,49 @@
+<div class="columns">
+  <div class="menu column is-3">
+    <p class="menu-label">
+      Events
+    </p>
+    <ul class="menu-list">
+      <li><a href="/dashboard?opt=1">My Events</a></li>
+      <li><a href="/dashboard?opt=2">Attending</a></li>
+      <li><a href="/dashboard?opt=3">Create Event</a></li>
+    </ul>
+    <p class="menu-label">
+      Profile
+    </p>
+    <ul class="menu-list">
+      <li><a href="/dashboard?opt=4">Update Username</a></li>
+      <li><a href="/dashboard?opt=5">Update Password</a></li>
+    </ul>
+  </div>
+  <section class="section column">
+    {{#if query}}  
+      {{#if (equal query "1")}}
+      <h1 class="title">My Events:</h1>
+      {{#each created as |event|}}
+      {{> create-details}}
+      {{/each}}
+      <script src="/js/my-event.js"></script>
+      {{/if}}
+      {{#if (equal query "2")}}
+      <h1 class="title">Attending Events:</h1>
+      {{#each attend as |event|}}
+      {{> event-details}}
+      {{/each}}
+      {{/if}}
+      {{#if (equal query "3")}}
+      {{> new-event}}
+      {{/if}}
+      {{#if (equal query "4")}}
+      {{> update-username}}
+      {{/if}}
+      {{#if (equal query "5")}}
+      {{> update-password}}
+      {{/if}}
+    {{else}}
+    {{> dashboard-main}}
 
+<<<<<<< HEAD
   <section class="main-content columns is-fullheight">
     <aside class="column is-3 is-narrow-mobile is-fullheight section is-hidden-mobile mt-5">
       <p class="menu-label text is-">
@@ -36,3 +81,8 @@
 {{#each posts as |post|}}
 {{> post-detail}}
 {{/each}} --}}
+=======
+    {{/if}}
+  </section>
+</div>
+>>>>>>> c35e91f6714a3bf345011a0de8a0c8e481268ef5

@@ -1,30 +1,48 @@
-<!-- Loop over events -->
-<div class="card">
-  <header class="card-header">
-    <h2>{{title}}</h2>
-    <p>Created by {{creator.username}} on {{createdAt}}</p>
-
-  </header>
-  <p>Event Date: {{date}}</p>
-  <p>Event Location: {{location}}</p>
-  <p>Description: {{description}}</p>
-
-  <p>
-    Number of people attending:
-    {{attendee.length}}
-  </p>
-  {{#if logged_in}}
-    <div>
-      {{#if attended}}
-        <button
-          id="unattendBtn"
-          class="button is-light is-rounded"
-        >Unattending</button>
-        <script src="/js/unattend.js"></script>
-      {{else}}
-        <button id="attendBtn" class="button is-danger is-rounded">I'm Attending</button>
-        <script src="/js/attend.js"></script>
-      {{/if}}
-    </div>
-  {{/if}}
+<section class="section has-background-primary">
+  <h1 class="title has-text-info-light">{{title}}</h1>
+  <h2 class="subtitle has-text-info-light">
+    Created by
+    <strong class="has-text-info-light">{{creator.username}}</strong>
+    on
+    {{format_date createdAt}}
+  </h2>
+</section>
+<div class="container">
+  <div class="notification is-light">
+    <strong>Event Date: </strong>
+    {{format_date date}}
+  </div>
 </div>
+<div class="container">
+  <div class="notification is-light">
+    <strong>Event Location: </strong>
+    {{location}}
+  </div>
+</div>
+<div class="container">
+  <div class="notification is-light">
+    <strong>Number of people attending: </strong>
+    {{attendee.length}}
+  </div>
+</div>
+
+<div class="container">
+  <div class="notification is-light">
+    <strong>Description: </strong>
+    {{description}}
+  </div>
+</div>
+<br />
+{{#if logged_in}}
+  <div>
+    {{#if attended}}
+      <button id="unattendBtn" class="button is-light is-rounded"><strong
+        >Unattend</strong></button>
+      <script src="/js/unattend.js"></script>
+    {{else}}
+      <button id="attendBtn" class="button is-danger is-rounded"><strong
+        >Attend</strong></button>
+      <script src="/js/attend.js"></script>
+    {{/if}}
+  </div>
+{{/if}}
