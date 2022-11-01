@@ -14,7 +14,17 @@ No installation requiried, just visit the Application link
 
 ## Application Link:
 
+https://tech-event-planner.herokuapp.com/
+
 ## Screenshot of Application:
+![Alt text](/public/img/Screen-shot1.png)
+![Alt text](/public/img/Screen-shot3.png)
+![Alt text](/public/img/Screen-shot4.png)
+![Alt text](/public/img/Screen-shot5.png)
+![Alt text](/public/img/Screen-shot6.png)
+![Alt text](/public/img/Screen-shot7.png)
+![Alt text](/public/img/Screen-shot8.png)
+
 
 ## Credits:
 
