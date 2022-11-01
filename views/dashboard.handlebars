@@ -1,5 +1,5 @@
 <div class="columns">
-  <div class="menu column is-3">
+  <div class="menu column is-2 mt-6">
     <p class="menu-label">
       Events
     </p>
@@ -19,14 +19,14 @@
   <section class="section column">
     {{#if query}}  
       {{#if (equal query "1")}}
-      <h1 class="title">My Events:</h1>
+      <h1 class="title header-style">My Events:</h1>
       {{#each created as |event|}}
       {{> create-details}}
       {{/each}}
       <script src="/js/my-event.js"></script>
       {{/if}}
       {{#if (equal query "2")}}
-      <h1 class="title">Attending Events:</h1>
+      <h1 class="title header-style">Attending Events:</h1>
       {{#each attend as |event|}}
       {{> event-details}}
       {{/each}}
